@@ -33,6 +33,12 @@ namespace TrashCollectorfr.Models
         [Display(Name = "Balance")]
         public string Balence { get; }
 
+        [ForeignKey("ApplicationUser")]
+        public string ApplicationId { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
+
+
+
 
     }
 }
