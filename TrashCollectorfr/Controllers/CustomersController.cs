@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -48,6 +49,7 @@ namespace TrashCollectorfr.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,FirstName,LastName,StreetName,City,State,Zipcode")] Customer customer)
         {
+            customer.ApplicationId = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
                 db.Customers.Add(customer);
