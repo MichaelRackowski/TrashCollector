@@ -15,10 +15,32 @@ namespace TrashCollectorfr.Migrations
 
         protected override void Seed(TrashCollectorfr.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            context.Days.AddOrUpdate(
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+                new Models.Day { DayOfWeek = "Monday" },
+                new Models.Day { DayOfWeek = "Tuesday" },
+                new Models.Day { DayOfWeek = "Wednesday" },
+                new Models.Day { DayOfWeek = "Thursday" }, 
+                new Models.Day { DayOfWeek = "Friday" },
+                new Models.Day { DayOfWeek = "Saturday" },
+                new Models.Day { DayOfWeek = "Sunday" }
+                );
+
+
+
+
+
         }
+
+
+
+
+          
+
+        //  This method will be called after migrating to the latest version.
+
+        //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+        //  to avoid creating duplicate seed data.
+    
     }
 }
