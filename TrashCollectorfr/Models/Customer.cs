@@ -35,6 +35,12 @@ namespace TrashCollectorfr.Models
 
         [Display(Name = "Extra Pick Up Date")]
         public string ExtraDay { get; set; }
+      
+        [Display(Name = "Start Date For Suspension")]
+        public string StartDay { get; set; }
+       
+        [Display(Name = "End Date For Suspension")]
+        public string EndDay { get; set; }
 
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
