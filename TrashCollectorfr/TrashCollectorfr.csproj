@@ -177,17 +177,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910021818345_InitialCreate.cs" />
-    <Compile Include="Migrations\201910021818345_InitialCreate.Designer.cs">
-      <DependentUpon>201910021818345_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201910031329119_AddedForeignKeyDayToCustomerModel.cs" />
+    <Compile Include="Migrations\201910031329119_AddedForeignKeyDayToCustomerModel.Designer.cs">
+      <DependentUpon>201910031329119_AddedForeignKeyDayToCustomerModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910021947407_employeescustomers.cs" />
-    <Compile Include="Migrations\201910021947407_employeescustomers.Designer.cs">
-      <DependentUpon>201910021947407_employeescustomers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910022026355_AddedForeignKeyApplicationUser.cs" />
-    <Compile Include="Migrations\201910022026355_AddedForeignKeyApplicationUser.Designer.cs">
-      <DependentUpon>201910022026355_AddedForeignKeyApplicationUser.cs</DependentUpon>
+    <Compile Include="Migrations\201910031501428_AddingSeedMethod.cs" />
+    <Compile Include="Migrations\201910031501428_AddingSeedMethod.Designer.cs">
+      <DependentUpon>201910031501428_AddingSeedMethod.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -286,14 +282,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910021818345_InitialCreate.resx">
-      <DependentUpon>201910021818345_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910031329119_AddedForeignKeyDayToCustomerModel.resx">
+      <DependentUpon>201910031329119_AddedForeignKeyDayToCustomerModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910021947407_employeescustomers.resx">
-      <DependentUpon>201910021947407_employeescustomers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910022026355_AddedForeignKeyApplicationUser.resx">
-      <DependentUpon>201910022026355_AddedForeignKeyApplicationUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910031501428_AddingSeedMethod.resx">
+      <DependentUpon>201910031501428_AddingSeedMethod.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

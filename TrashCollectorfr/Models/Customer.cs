@@ -37,6 +37,13 @@ namespace TrashCollectorfr.Models
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
 
+        [ForeignKey("Day")]
+        [Display(Name = "Pick Up Day")]
+        public int DayId { get; set; }
+        public Day Day { get; set; }
+
+        public IEnumerable<Day> Days { get; set; }
+
 
 
 

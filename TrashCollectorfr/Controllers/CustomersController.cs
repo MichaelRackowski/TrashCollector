@@ -39,7 +39,10 @@ namespace TrashCollectorfr.Controllers
         // GET: Customers/Create
         public ActionResult Create()
         {
-            return View();
+            Customer customer = new Customer();
+            customer.Days = db.Days.ToList();
+            //var days = db.Days.ToList();
+            return View(customer);
         }
 
         // POST: Customers/Create
@@ -47,7 +50,7 @@ namespace TrashCollectorfr.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,StreetName,City,State,Zipcode")] Customer customer)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,StreetName,City,State,Zipcode,DayId")] Customer customer)
         {
             customer.ApplicationId = User.Identity.GetUserId();
             if (ModelState.IsValid)

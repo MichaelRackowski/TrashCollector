@@ -15,21 +15,15 @@ namespace TrashCollectorfr.Migrations
 
         protected override void Seed(TrashCollectorfr.Models.ApplicationDbContext context)
         {
-            context.Days.AddOrUpdate(
-
-                new Models.Day { DayOfWeek = "Monday" },
-                new Models.Day { DayOfWeek = "Tuesday" },
-                new Models.Day { DayOfWeek = "Wednesday" },
-                new Models.Day { DayOfWeek = "Thursday" }, 
-                new Models.Day { DayOfWeek = "Friday" },
-                new Models.Day { DayOfWeek = "Saturday" },
-                new Models.Day { DayOfWeek = "Sunday" }
-                );
-
-
-
-
-
+            //context.Days.AddOrUpdate(
+            //    new Models.Day { DayOfWeek = "Monday" },
+            //    new Models.Day { DayOfWeek = "Tuesday" },
+            //    new Models.Day { DayOfWeek = "Wednesday" },
+            //    new Models.Day { DayOfWeek = "Thursday" },
+            //    new Models.Day { DayOfWeek = "Friday" },
+            //    new Models.Day { DayOfWeek = "Saturday" },
+            //    new Models.Day { DayOfWeek = "Sunday" }
+            //    );
         }
 
 

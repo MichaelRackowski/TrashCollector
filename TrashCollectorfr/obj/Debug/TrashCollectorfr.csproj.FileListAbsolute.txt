@@ -101,8 +101,7 @@ C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollector
 C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.csproj.CopyComplete
 C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.dll
 C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.pdb
-C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.Migrations.InitialCreate.resources
-C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.csproj.GenerateResource.cache
-C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.Migrations.employeescustomers.resources
 C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.csprojAssemblyReference.cache
-C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.Migrations.AddedForeignKeyApplicationUser.resources
+C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.Migrations.AddedForeignKeyDayToCustomerModel.resources
+C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.csproj.GenerateResource.cache
+C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.Migrations.AddingSeedMethod.resources
