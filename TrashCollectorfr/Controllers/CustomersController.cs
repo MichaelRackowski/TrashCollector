@@ -50,7 +50,7 @@ namespace TrashCollectorfr.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,StreetName,City,State,Zipcode,DayId")] Customer customer)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,StreetName,City,State,Zipcode,DayId,ExtraDay")] Customer customer)
         {
             customer.ApplicationId = User.Identity.GetUserId();
             if (ModelState.IsValid)

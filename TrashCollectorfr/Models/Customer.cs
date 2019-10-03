@@ -33,6 +33,9 @@ namespace TrashCollectorfr.Models
         [Display(Name = "Balance")]
         public string Balence { get; }
 
+        [Display(Name = "Extra Pick Up Date")]
+        public string ExtraDay { get; set; }
+
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
