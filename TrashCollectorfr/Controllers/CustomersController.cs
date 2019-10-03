@@ -18,7 +18,7 @@ namespace TrashCollectorfr.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            return View(db.Customers.ToList());
+            return View(db.Customers.Include(c => c.Day).ToList());
         }
 
         // GET: Customers/Details/5
@@ -65,12 +65,14 @@ namespace TrashCollectorfr.Controllers
 
         // GET: Customers/Edit/5
         public ActionResult Edit(int? id)
-        {
+        { 
+           
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Customer customer = db.Customers.Find(id);
+            customer.Days = db.Days.ToList();
             if (customer == null)
             {
                 return HttpNotFound();
@@ -83,7 +85,7 @@ namespace TrashCollectorfr.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,StreetName,City,State,Zipcode")] Customer customer)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,StreetName,City,State,Zipcode,DayId")] Customer customer)
         {
             if (ModelState.IsValid)
             {
