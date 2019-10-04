@@ -189,6 +189,10 @@
     <Compile Include="Migrations\201910031805016_AddedExtraPickUpDate.Designer.cs">
       <DependentUpon>201910031805016_AddedExtraPickUpDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910032005007_AddedStartAndEndDate.cs" />
+    <Compile Include="Migrations\201910032005007_AddedStartAndEndDate.Designer.cs">
+      <DependentUpon>201910032005007_AddedStartAndEndDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -294,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910031805016_AddedExtraPickUpDate.resx">
       <DependentUpon>201910031805016_AddedExtraPickUpDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910032005007_AddedStartAndEndDate.resx">
+      <DependentUpon>201910032005007_AddedStartAndEndDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

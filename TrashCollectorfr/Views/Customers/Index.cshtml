@@ -35,6 +35,12 @@
         <th>
             @Html.DisplayNameFor(model => model.ExtraDay)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDay)
+        </th>
         <th></th>
     </tr>
 
@@ -63,6 +69,12 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.ExtraDay)
+    </td>
+    <td>
+        @Html.DisplayFor(model => item.StartDay)
+    </td>
+    <td>
+        @Html.DisplayFor(model => item.EndDay)
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

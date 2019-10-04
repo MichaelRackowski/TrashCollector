@@ -16,9 +16,13 @@ namespace TrashCollectorfr.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Employees
-        public ActionResult Index()
+        public ActionResult Index(int Id)
         {
-            return View(db.Employees.ToList());
+            Employee employee = db.Employees.Where(e => e.Id == Id).FirstOrDefault();
+
+            var customers = db.Customers.Where(c => c.Zipcode == employee.Zipcode).ToList();
+            
+            return View(customers);
         }
 
         // GET: Employees/Details/5
