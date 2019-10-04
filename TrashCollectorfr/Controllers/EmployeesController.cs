@@ -25,8 +25,9 @@ namespace TrashCollectorfr.Controllers
            // var today = db.Customers.Where(c => c.Day.DayOfWeek == dayOfWeek);
             var customers = db.Customers.Where(c => c.Zipcode == employee.Zipcode && (c.ExtraDay == DateTime.Today.DayOfWeek.ToString() || c.Day.DayOfWeek == dayOfWeek));
             //customers = customers.Where(they are NOT currently suspended); COME BACK TO
-            
             // var customersExtra = db.Customers.Where(c => c.ExtraDay == DateTime.Today.DayOfWeek.ToString());
+          
+            ViewBag.Name = new SelectList(db.Days.Where(u => !u.DayOfWeek.Contains("Admin")).ToList(), "Id", "DayOfWeek");
             return View(customers);
         }
 
