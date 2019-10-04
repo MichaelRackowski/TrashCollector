@@ -16,12 +16,17 @@ namespace TrashCollectorfr.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Employees
-        public ActionResult Index(int Id)
+        public ActionResult Index(int? Id)
         {
-            Employee employee = db.Employees.Where(e => e.Id == Id).FirstOrDefault();
-
-            var customers = db.Customers.Where(c => c.Zipcode == employee.Zipcode).ToList();
             
+            Employee employee = db.Employees.Where(e => e.Id == Id).FirstOrDefault();
+            var dayOfWeek = DateTime.Today.DayOfWeek.ToString();
+            // query days table using 'dayOfWeek'
+           // var today = db.Customers.Where(c => c.Day.DayOfWeek == dayOfWeek);
+            var customers = db.Customers.Where(c => c.Zipcode == employee.Zipcode && (c.ExtraDay == DateTime.Today.DayOfWeek.ToString() || c.Day.DayOfWeek == dayOfWeek));
+            //customers = customers.Where(they are NOT currently suspended); COME BACK TO
+            
+            // var customersExtra = db.Customers.Where(c => c.ExtraDay == DateTime.Today.DayOfWeek.ToString());
             return View(customers);
         }
 
@@ -58,7 +63,7 @@ namespace TrashCollectorfr.Controllers
                 employee.ApplicationId = User.Identity.GetUserId();
                 db.Employees.Add(employee);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new{Id=employee.Id});
             }
 
             return View(employee);
