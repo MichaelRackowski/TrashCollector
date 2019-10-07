@@ -18,17 +18,32 @@ namespace TrashCollectorfr.Controllers
         // GET: Employees
         public ActionResult Index()
         {
+            var currentdate = DateTime.Today;
             var Id = User.Identity.GetUserId();
             Employee employee = db.Employees.Where(e => e.ApplicationId == Id).FirstOrDefault();
             var dayOfWeek = DateTime.Today.DayOfWeek.ToString();
             // query days table using 'dayOfWeek'
             var today = db.Customers.Where(c => c.Day.DayOfWeek == dayOfWeek);
-            var customers = db.Customers.Where(c => c.Zipcode == employee.Zipcode && (c.ExtraDay == DateTime.Today.DayOfWeek.ToString() || c.Day.DayOfWeek == dayOfWeek));
+            var customers = db.Customers.Where(c => c.Zipcode == employee.Zipcode && (c.ExtraDay == DateTime.Today.DayOfWeek.ToString() || c.Day.DayOfWeek == dayOfWeek));      // && c.StartDay != DateTime.Today.DayOfWeek.ToString());
+                                                                                                                                                                                //  var activecustomers = customers.Where(c => c.StartDay != )
+            List<Customer> actualcustomers = new List<Customer>();
+            foreach (Customer customer in customers)
+            {
+                if (customer.StartDay == null && customer.EndDay == null)
+                {
+                    actualcustomers.Add(customer);
+                    continue;
+                }               
+                else if (currentdate.CompareTo(DateTime.Today) < 0 && currentdate.CompareTo(DateTime.Today) > 0)
+                {
+                    continue;
+                }
+            }
             //customers = customers.Where(they are NOT currently suspended); COME BACK TO
-            var customersExtra = db.Customers.Where(c => c.ExtraDay == DateTime.Today.DayOfWeek.ToString());
+            // var customersExtra = db.Customers.Where(c => c.ExtraDay == DateTime.Today.DayOfWeek.ToString());
 
-           // ViewBag.Name = new SelectList(db.Days.Where(u => !u.DayOfWeek.Contains("Admin")).ToList(), "Id", "DayOfWeek");
-            return View(customers);
+            // ViewBag.Name = new SelectList(db.Days.Where(u => !u.DayOfWeek.Contains("Admin")).ToList(), "Id", "DayOfWeek");
+            return View(actualcustomers);
         }
 
        
@@ -128,7 +143,6 @@ namespace TrashCollectorfr.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
         public ActionResult Sort(int? Id)
         {
             DayOfWeek day = DayOfWeek.Monday;

@@ -37,10 +37,16 @@ namespace TrashCollectorfr.Models
         public string ExtraDay { get; set; }
       
         [Display(Name = "Start Date For Suspension")]
-        public string StartDay { get; set; }
+        public DateTime? StartDay { get; set; }
        
         [Display(Name = "End Date For Suspension")]
-        public string EndDay { get; set; }
+        public DateTime? EndDay { get; set; }
+
+        [Display(Name = "Active Suspension")]
+        public bool ActiveSuspension{ get; set; }
+       
+
+
 
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }

@@ -19,6 +19,7 @@ namespace TrashCollectorfr.Controllers
         public ActionResult Index()
         {
             return View(db.Customers.Include(c => c.Day).ToList());
+           
         }
 
         // GET: Customers/Details/5

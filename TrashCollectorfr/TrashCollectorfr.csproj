@@ -197,6 +197,14 @@
     <Compile Include="Migrations\201910071551515_AddedABalnce.Designer.cs">
       <DependentUpon>201910071551515_AddedABalnce.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910071824487_NewDataBase.cs" />
+    <Compile Include="Migrations\201910071824487_NewDataBase.Designer.cs">
+      <DependentUpon>201910071824487_NewDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910071905317_ErrorGoAway.cs" />
+    <Compile Include="Migrations\201910071905317_ErrorGoAway.Designer.cs">
+      <DependentUpon>201910071905317_ErrorGoAway.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -309,6 +317,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910071551515_AddedABalnce.resx">
       <DependentUpon>201910071551515_AddedABalnce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910071824487_NewDataBase.resx">
+      <DependentUpon>201910071824487_NewDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910071905317_ErrorGoAway.resx">
+      <DependentUpon>201910071905317_ErrorGoAway.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
