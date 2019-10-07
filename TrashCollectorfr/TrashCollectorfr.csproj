@@ -177,6 +177,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Keys.cs" />
     <Compile Include="Migrations\201910031329119_AddedForeignKeyDayToCustomerModel.cs" />
     <Compile Include="Migrations\201910031329119_AddedForeignKeyDayToCustomerModel.Designer.cs">
       <DependentUpon>201910031329119_AddedForeignKeyDayToCustomerModel.cs</DependentUpon>
