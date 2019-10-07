@@ -22,14 +22,16 @@ namespace TrashCollectorfr.Controllers
             Employee employee = db.Employees.Where(e => e.Id == Id).FirstOrDefault();
             var dayOfWeek = DateTime.Today.DayOfWeek.ToString();
             // query days table using 'dayOfWeek'
-           // var today = db.Customers.Where(c => c.Day.DayOfWeek == dayOfWeek);
+            var today = db.Customers.Where(c => c.Day.DayOfWeek == dayOfWeek);
             var customers = db.Customers.Where(c => c.Zipcode == employee.Zipcode && (c.ExtraDay == DateTime.Today.DayOfWeek.ToString() || c.Day.DayOfWeek == dayOfWeek));
             //customers = customers.Where(they are NOT currently suspended); COME BACK TO
-            // var customersExtra = db.Customers.Where(c => c.ExtraDay == DateTime.Today.DayOfWeek.ToString());
-          
-            ViewBag.Name = new SelectList(db.Days.Where(u => !u.DayOfWeek.Contains("Admin")).ToList(), "Id", "DayOfWeek");
+            var customersExtra = db.Customers.Where(c => c.ExtraDay == DateTime.Today.DayOfWeek.ToString());
+
+           // ViewBag.Name = new SelectList(db.Days.Where(u => !u.DayOfWeek.Contains("Admin")).ToList(), "Id", "DayOfWeek");
             return View(customers);
         }
+
+       
 
         // GET: Employees/Details/5
         public ActionResult Details(int? id)
@@ -126,6 +128,56 @@ namespace TrashCollectorfr.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Sort(int? Id)
+        {
+            DayOfWeek day = DayOfWeek.Monday;
+
+            switch (Id)
+            {
+                case 1:
+                    day = DayOfWeek.Monday;
+                    break;
+                case 2:
+                    day = DayOfWeek.Tuesday;
+                    break;
+                case 3:
+                    day = DayOfWeek.Wednesday;
+                    break;
+                case 4:
+                    day = DayOfWeek.Thursday;
+                    break;
+                case 5:
+                    day = DayOfWeek.Friday;
+                    break;
+                case 6:
+                    day = DayOfWeek.Saturday;
+                    break;
+                case 7:
+                    day = DayOfWeek.Sunday;
+                    break;
+                default: 
+                    break;                 
+            }
+            Employee employee = db.Employees.Where(e => e.Id == Id).FirstOrDefault(); 
+            var dayOfWeek = DateTime.Today.DayOfWeek.ToString();
+            //var today = db.Customers.Where(c => c.Day.DayOfWeek == dayOfWeek);
+            var customers = db.Customers.Where(c => c.Zipcode == employee.Zipcode); //&& (c.ExtraDay == DateTime.Today.DayOfWeek.ToString() || c.Day.DayOfWeek == dayOfWeek));
+            var currentDay = customers.Where(c => c.DayId == Id);
+            return View("Index",currentDay);
+        }
+
+      //public ActionResult Confirm()
+      //  {
+
+      //  }
+
+        public ActionResult Balance(int? Id)
+        {
+            var balance = db.Customers.Find(Id);
+            return View(balance);
+        }
+
 
         protected override void Dispose(bool disposing)
         {
