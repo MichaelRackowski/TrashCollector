@@ -31,7 +31,7 @@ namespace TrashCollectorfr.Models
         public string Zipcode { get; set; }
 
         [Display(Name = "Balance")]
-        public string Balance { get; }
+        public int Balance { get; set; }
 
         [Display(Name = "Extra Pick Up Date")]
         public string ExtraDay { get; set; }

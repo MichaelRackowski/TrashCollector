@@ -16,10 +16,10 @@ namespace TrashCollectorfr.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Employees
-        public ActionResult Index(int? Id)
+        public ActionResult Index()
         {
-            
-            Employee employee = db.Employees.Where(e => e.Id == Id).FirstOrDefault();
+            var Id = User.Identity.GetUserId();
+            Employee employee = db.Employees.Where(e => e.ApplicationId == Id).FirstOrDefault();
             var dayOfWeek = DateTime.Today.DayOfWeek.ToString();
             // query days table using 'dayOfWeek'
             var today = db.Customers.Where(c => c.Day.DayOfWeek == dayOfWeek);
@@ -167,15 +167,12 @@ namespace TrashCollectorfr.Controllers
             return View("Index",currentDay);
         }
 
-      //public ActionResult Confirm()
-      //  {
-
-      //  }
-
         public ActionResult Balance(int? Id)
         {
-            var balance = db.Customers.Find(Id);
-            return View(balance);
+            var currentcustomer = db.Customers.Find(Id);
+            currentcustomer.Balance = 20;
+            db.SaveChanges();
+            return View("Confirm");
         }
 
 

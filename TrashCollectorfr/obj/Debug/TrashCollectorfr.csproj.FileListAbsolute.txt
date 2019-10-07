@@ -107,3 +107,4 @@ C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollector
 C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.Migrations.AddingSeedMethod.resources
 C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.Migrations.AddedExtraPickUpDate.resources
 C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.Migrations.AddedStartAndEndDate.resources
+C:\Users\jrack\Desktop\Projects\TrashCollectorfr\TrashCollectorfr\TrashCollectorfr\obj\Debug\TrashCollectorfr.Migrations.AddedABalnce.resources

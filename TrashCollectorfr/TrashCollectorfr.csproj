@@ -193,6 +193,10 @@
     <Compile Include="Migrations\201910032005007_AddedStartAndEndDate.Designer.cs">
       <DependentUpon>201910032005007_AddedStartAndEndDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910071551515_AddedABalnce.cs" />
+    <Compile Include="Migrations\201910071551515_AddedABalnce.Designer.cs">
+      <DependentUpon>201910071551515_AddedABalnce.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -271,6 +275,7 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Employees\Confirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -301,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910032005007_AddedStartAndEndDate.resx">
       <DependentUpon>201910032005007_AddedStartAndEndDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910071551515_AddedABalnce.resx">
+      <DependentUpon>201910071551515_AddedABalnce.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

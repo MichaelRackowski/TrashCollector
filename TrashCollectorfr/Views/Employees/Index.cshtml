@@ -36,7 +36,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Zipcode)
         </th>
-        <th></th>
     </tr>
 
     @foreach (var item in Model)
@@ -51,19 +50,16 @@
     <td>
         @Html.DisplayFor(modelItem => item.Zipcode)
     </td>
+    
     <td>
-        @Html.DisplayFor(modelItem => item.Balance)
-    </td>
-    <td>
-      
+
         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
         @*@Html.ActionLink("Details", "Details", new { id = item.Id })*@ |
         @Html.ActionLink("Details", "Details", "Customers", new { id = item.Id }, null) |
 
-
         @Html.ActionLink("Delete", "Delete", new { id = item.Id })
 
-        @Html.ActionLink("Confirm", "Confirm", new { id = item.Id })
+        @Html.ActionLink("Confirm", "Balance", new { id = item.Id })
     </td>
 </tr>
     }
